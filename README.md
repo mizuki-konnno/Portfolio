@@ -1,24 +1,43 @@
-# README
+# < 筋トレ管理 WEB アプリケーション "Power rain" >
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
 
-Things you may want to cover:
+< スポーツジムなどで筋トレを行う際にトレーニング名や重さや回数を記録し管理するためのサイト >
 
-* Ruby version
+### 使い方
 
-* System dependencies
+< トレーニング内容を記述していただきさらにその日の体重、体脂肪率、画像などを入力していただくことで自分の体の変化をグラフなどで見ることができます。また他の方のメニューなど参考にしていただけます。 >
 
-* Configuration
+### テーマを選んだ理由
 
-* Database creation
+< ジムに行くとトレーニング内容などをいつもノートに記入していたのですがそれを管理したいと思ったため。また周りを見ても同じようにメモに残していたりする人も見受けられるためそのような方に使っていただく為に選びました。 >
 
-* Database initialization
+### ターゲットユーザ
 
-* How to run the test suite
+< ジムなどで筋トレを行う方 >
 
-* Services (job queues, cache servers, search engines, etc.)
+### 主な利用シーン
 
-* Deployment instructions
+< ジムや家トレ >
 
-* ...
+## 設計書
+
+< ER 図 >
+< https://drive.google.com/file/d/1tzZXMaLPxUpBcFPoeYtHSc7BExMCzBzP/view?usp=sharing >
+
+## チャレンジ要素一覧
+
+< https://docs.google.com/spreadsheets/d/16-6JK7xJdFxh4IO2eGq1DuUu05-6MD-EplOM-ULiUx8/edit#gid=0 >
+
+## 開発環境
+
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JS ライブラリ：jQuery
+- IDE：Cloud9
+
+## 使用素材
+
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名と URL を明記してください。（後ほど記述）
+- 使用しない場合は、使用素材の項目を README から削除してください。
