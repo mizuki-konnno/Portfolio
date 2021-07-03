@@ -2,7 +2,7 @@
 
 ## サイト概要
 
-< スポーツジムなどで筋トレを行う際にトレーニング名や重さや回数を記録し管理するためのサイト >
+< スポーツジムなどで筋トレを行う際にトレーニング内容や重さや回数を記録し管理するためのサイト。体重など登録していただくことでグラフなどでデータを閲覧することができます。また他のユーザのメニューなど参考にトレーニングの質を高められます。 >
 
 ### 使い方
 
@@ -14,16 +14,25 @@
 
 ### ターゲットユーザ
 
-< ジムなどで筋トレを行う方 >
+< ジムや家で筋力トレーニングなど体づくりを行う老若男女の方々 >
 
 ### 主な利用シーン
 
-< ジムや家トレ >
+< ジムや家で筋肉トレーニングや体づくりを行う際に手軽にトレーニング内容を登録できます。 >
 
 ## 設計書
 
 < ER 図 >
 < https://drive.google.com/file/d/1tzZXMaLPxUpBcFPoeYtHSc7BExMCzBzP/view?usp=sharing >
+
+< テーブル定義書 >
+< https://1drv.ms/x/s!Ag91A9xwiLMkd8XwJZfq5NzuIv4?e=GUAjvF >
+
+< 詳細設計書 >
+< https://1drv.ms/x/s!Ag91A9xwiLMkfIsUfA48s62oNWE?e=gsEsdU >
+
+< WBS >
+< https://docs.google.com/spreadsheets/d/16YP4TNjiMXS0sU7yZbfJpusP4_JfdSD4QxNRyLcrLic/edit?usp=sharing >
 
 ## チャレンジ要素一覧
 
@@ -38,6 +47,8 @@
 - IDE：Cloud9
 
 ## 使用素材
+
+- 今後使用時記述
 
 - 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名と URL を明記してください。（後ほど記述）
 - 使用しない場合は、使用素材の項目を README から削除してください。
