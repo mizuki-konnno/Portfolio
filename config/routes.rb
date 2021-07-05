@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :menus
   resources :relationships
   resources :training_contents
-  resources :trainings
+  resources :trainings, only: [:index, :create, :destroy, :edit, :update,:show]
   resources :user_dates
   resources :users, only: [:show, :edit, :update]
 

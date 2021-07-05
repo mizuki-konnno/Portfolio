@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= link_to '日記をかく', root_path %>
+
+      <%= month_calendar events: @trainings do |date, training| %>
+      <%= date %>
+
+      <% training.each do |training| %>
+      <div>
+
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,78 @@
-<h1>timer</h1>
+<div class='container '>
+  <div class='row-12 '>
+　　<h1 id="timer" class='col-3 mx-auto display-1 mt-5'></h1>
+　</div>
+　<div class='row-12 d-flex justify-content-around my-5'>
+    <button id="startbutton" class='col-2'>start</button>
+    <button id="stopbutton" class='col-2'>stop</button>
+    <button id="resetbutton" class='col-2'>reset</button>
+  </div>
+
+
+        <script>
+            var to_timeup = 60;
+            var max = 60;
+            var intervalid;
+            var start_flag = false;
+
+            function count_start(){
+                console.log("count_start");
+               if(start_flag===false){
+                intervalid = setInterval(count_down,1000);
+                start_flag = true;
+               }
+            }
+
+            function count_down(){
+                console.log("count_down");
+                   var timer = document.getElementById("timer");
+                if(to_timeup===0){
+                    timer.innerHTML = 'Time up!'
+                    timer.style.color="red";
+                    count_stop();
+                }   else {
+                    to_timeup--;
+                    padding();
+                }
+            }
+
+            function padding(){
+                var timer=document.getElementById("timer");
+                var min = 0;
+                var sec = 0;
+                min = Math.floor(to_timeup/60);
+                sec = (to_timeup%60);
+                min = ("0"+min).slice(-2);
+                sec = ("0"+sec).slice(-2);
+                timer.innerHTML = min +":"+ sec;
+            }
+
+            function count_stop(){
+                console.log(count_stop);
+                clearInterval(intervalid);
+                start_flag = false;
+            }
+
+            function count_reset(){
+                console.log(count_reset);
+                var timer = document.getElementById("timer");
+                clearInterval(intervalid);
+                start_flag = false;
+                to_timeup = max;
+                padding();
+                timer.style.color = "black";
+            }
+
+            window.onload = function(){
+                //console.log("mumei");
+                padding();
+                var startbutton=document.getElementById("startbutton");
+                startbutton.addEventListener("click",count_start,false);
+                var stopbutton=document.getElementById("stopbutton");
+                stopbutton.addEventListener("click",count_stop,false);
+                var resetbutton=document.getElementById("resetbutton");
+                resetbutton.addEventListener("click",count_reset,false);
+            }
+
+        </script>
+  </div>
