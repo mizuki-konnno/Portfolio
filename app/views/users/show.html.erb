@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row ">
+    <div class="col-md-6 my-3" style="text-align:center;">
+      <h2>My Page</h2>
+    </div>
+
+    <div class="col-md-6 mt-5" style="text-align:center;">
+     <strong>マイページ</strong> <%= link_to "情報入力", edit_user_path(@user), class:"btn btn-success  btn-sm mypage_edit" %>
+    </div>
+
+  </div>
+
+  <div class="row" style="padding-top:10px;">
+    <div class="col-md-12" style="text-align:center;">
+      <table class="table table-bordered my-3" align="center">
+
+         <tr><td colspan="2"><%= attachment_image_tag(@user, :profile_image, :size =>'250x300', fallback: "no_image.jpg") %></td></tr>
+
+        <tr>
+          <td>氏名</td>
+          <td><%= @user.name %></td>
+        </tr>
+
+        <tr>
+          <td>性別</td>
+          <td><%= @user.gender %></td>
+        </tr>
+
+        <tr>
+          <td>メールアドレス</td>
+          <td><%= @user.email %></td>
+        </tr>
+
+        <tr>
+          <td>身長</td>
+          <td><%= @user.height %></td>
+        </tr>
+
+        <tr>
+          <td>体重</td>
+          <td><%= @user.body_weight %></td>
+        </tr>
+
+        <tr><td colspan="2">マイプロフィール</td></tr>
+        <tr><td colspan="2"><%= @user.introduction %></td></tr>
+      </table>
+    </div>
+  </div>
+</div>

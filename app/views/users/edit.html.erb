@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0 mx-auto">
+     <h2 class='my-3 py-3 text-center'>My pege 情報入力</h2>
+      <%= form_with model:@user, local:true do |f| %>
+
+        <div class="form-group row my-3">
+         <div class="col-sm-4"><label>会員ID</label></div>
+         <div class="col-sm-4"></div>
+         <div class="col-sm-4"></div>
+        </div>
+
+        <div class="form-group row my-3">
+         <div class="col-sm-4"><label>氏名</label></div>
+         <div class="col-sm-4"><%= f.text_field :name,  class: 'form-control' %></div>
+         <div class="col-sm-4"></div>
+        </div>
+
+        <div class="form-group row my-3">
+          <div class="col-sm-4"><label>性別</label></div>
+          <div class="col-sm-4">
+            <div class="radio-inline">
+             <%= f.radio_button :gender, :男性 %>
+             <%= f.label :男性, class: "gender_label" %>
+          </div>
+        </div>
+
+          <div class="col-sm-4">
+           <div class="radio-inline">
+           <%= f.radio_button :gender, :女性 %>
+           <%= f.label :女性, class: "gender_label" %>
+           </div>
+          </div>
+        </div>
+
+        <div class="form-group row my-3">
+         <div class="col-sm-4"><label>メールアドレス</label></div>
+         <div class="col-sm-4"><%= f.text_field :email,  class: 'form-control' %></div>
+         <div class="col-sm-4"></div>
+        </div>
+
+        <div class="form-group row my-3">
+         <div class="col-sm-4"><label>身長</label></div>
+         <div class="col-sm-4"><%= f.text_field :height,  class: 'form-control' %></div>
+         <div class="col-sm-4"></div>
+        </div>
+
+        <div class="form-group row my-3">
+         <div class="col-sm-4"><label>体重</label></div>
+         <div class="col-sm-4"><%= f.text_field :body_weight,  class: 'form-control' %></div>
+         <div class="col-sm-4"></div>
+        </div>
+
+        <div class="form-group row my-3">
+         <div class="col-sm-4"><label>自己紹介</label></div>
+         <div class="col-sm-4"><%= f.text_field :introduction,  class: 'form-control' %></div>
+         <div class="col-sm-4"></div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4"><%= f.submit "変更を保存", class: 'btn btn-success' %></div>
+          <div class="col-sm-4"><img src="/assets/IMG_9623.JPG" alt="" class='container-fluid mb-5'></div>
+        </div>
+      <% end %>
+  </div>
+</div>
