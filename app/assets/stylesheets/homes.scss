@@ -1,3 +1,46 @@
 // Place all the styles related to the Homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.about {/*親div*/
+  position: relative;/*相対配置*/
+  }
+
+.about p {
+  position: absolute;
+  color: white;/*文字は白に*/
+  font-weight: bold; /*太字に*/
+  font-size: 2em;/*サイズ2倍*/
+  top: 0;
+  left: 0;
+  text-align: center;
+  }
+
+// menuのホバーアクション
+  .menu {
+	overflow:		hidden;
+	position:		relative;
+}
+.menu .caption {
+	font-size: 130%;
+	text-align: center;
+	color: #fff;
+	padding-top: 180px;
+}
+.menu .mask {
+	width:			100%;
+	height:			100%;
+	position:		absolute;
+	top:			0;
+	left:			0;
+	opacity:		0;	/* マスクを表示しない */
+	background-color:	rgba(0,0,0,0.4);
+	-webkit-transition:	all 0.4s ease-out;
+	transition:		all 0.4s ease-out;
+}
+.menu:hover .mask {
+	opacity:		1;	/* マスクを表示する */
+	-webkit-transform:	scale(2);	/* 2倍に拡大 */
+	transform:		scale(2);
+}
+
