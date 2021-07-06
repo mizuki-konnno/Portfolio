@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="row ">
-    <div class="col-md-6 my-3" style="text-align:center;">
+  <div class="row">
+    <div class="col-md-12 my-3 text-center">
       <h2>My Page</h2>
     </div>
 
-    <div class="col-md-6 mt-5" style="text-align:center;">
-     <strong>マイページ</strong> <%= link_to "情報入力", edit_user_path(@user), class:"btn btn-success  btn-sm mypage_edit" %>
+    <div class="col-md-12 mt-5 text-center">
+     <strong>マイページ</strong> <%= link_to "情報入力", edit_user_path(@user), class:"btn btn-secondary  btn-sm mypage_edit" %>
     </div>
 
   </div>
@@ -33,12 +33,12 @@
 
         <tr>
           <td>身長</td>
-          <td><%= @user.height %></td>
+          <td><%= @user.height %>cm</td>
         </tr>
 
         <tr>
           <td>体重</td>
-          <td><%= @user.body_weight %></td>
+          <td><%= @user.body_weight %>kg</td>
         </tr>
 
         <tr><td colspan="2">マイプロフィール</td></tr>
@@ -46,4 +46,5 @@
       </table>
     </div>
   </div>
+  <%= render 'menus/index', menus: @menus %>
 </div>

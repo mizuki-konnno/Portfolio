@@ -1,0 +1,20 @@
+ <div class="row-12">
+    <div class="col-4 mx-auto">
+      <h2 class="text-center my-5">My Training</h2>
+      <h5 class="text-center my-5"><%= link_to "トレーニングメニューの登録", new_menu_path, class:"btn btn-link  btn-sm mypage_edit" %></h2>
+    </div>
+    <div class="col-11">
+      <table class="table text-right pr-5">
+        <% @menus.each do |menu| %>
+        <tr>
+          <td><%= menu.training_menu %></td>
+          <td>
+            <% if menu.user == current_user %>
+             <%= link_to "削除",menu_path(menu.id), class:"btn btn-danger  btn-sm ", method: :delete %>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>

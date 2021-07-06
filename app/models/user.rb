@@ -31,5 +31,7 @@ class User < ApplicationRecord
   has_many :menu, dependent: :destroy
   # 性別
   enum gender: {男性: 0, 女性: 1}
+  # 画像追加用のメソッド
+  attachment :profile_image
 end
 
