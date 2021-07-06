@@ -28,7 +28,7 @@ class User < ApplicationRecord
   # アソシエーション
   has_many :trainings, dependent: :destroy
   has_many :user_dates, dependent: :destroy
-  has_many :menu, dependent: :destroy
+  has_many :menus, dependent: :destroy
   # 性別
   enum gender: {男性: 0, 女性: 1}
   # 画像追加用のメソッド

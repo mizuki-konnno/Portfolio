@@ -1,8 +1,14 @@
 class UsersController < ApplicationController
 
+  def index
+    # gem kaminari ページネーション機能
+    @users = User.page(params[:page]).per(10)
+  end
+
   def show
     @user = User.find(params[:id])
-    @menus = Menu.all
+    # ユーザidに紐付いているmenuを入れる
+    @menus = @user.menus
   end
 
   def edit
