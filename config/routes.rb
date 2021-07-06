@@ -7,12 +7,12 @@ Rails.application.routes.draw do
   get "/home/about/", to: "homes#about"
   get "/home/timer/", to: "homes#timer"
 
-  resources :menus
+  resources :menus, only: [:new, :create, :destroy]
   resources :relationships
   resources :training_contents
   resources :trainings, only: [:index, :create, :destroy, :edit, :update,:show]
   resources :user_dates
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update]
 
 
 end
