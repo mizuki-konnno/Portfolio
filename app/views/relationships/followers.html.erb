@@ -1,17 +1,18 @@
-<!--user一覧画面-->
 <div class="container">
   <div class="row">
-    <div class="col text-center my-5">
-      <h2>Other User</h2>
+    <div class="col text-center mt-5">
+      <h2>Followers User</h2>
+    </div>
+    <div class="col-md-12 mt-5 text-center">
+      <%= link_to "Other Usersへ戻る", users_path, class:"btn btn-link  btn-sm mypage_edit" %>
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-      <table class="table text-center mb-5">
+  <div class='row'>
+    <div class='col-md-11 offset-md-1 mx-auto'>
+   <% if @users.exists? %>
+   <table class="table text-center my-5">
         <tr><th></th><th>名前</th><th>性別</th><th>フォロー数</th><th>フォロワー数</th><th></th><th>登録日</th></tr>
         <% @users.each do |user| %>
-        <!--自分を表示させない-->
-        <% unless current_user == user %>
         <tr>
           <td>
             <%= link_to user_path(user) do %>
@@ -26,14 +27,10 @@
           <td><%= user.created_at.strftime('%Y/%m/%d') %></td>
         </tr>
         <% end %>
-        <% end %>
       </table>
-    </div>
+   <% else %>
+    <p class="text-center h3 my-5">Followers Userはいません</p>
+   <% end %>
   </div>
-  <div class="row ml-5">
-    <div class="col-2 mx-auto">
-      <!--# gem kaminari ページネーション機能-->
-      <%= paginate(@users) %>
-    </div>
-  </div>
+ </div>
 </div>
