@@ -8,11 +8,15 @@ Rails.application.routes.draw do
   get "/home/timer/", to: "homes#timer"
 
   resources :menus, only: [:new, :create, :destroy]
-  resources :relationships
   resources :training_contents
   resources :trainings, only: [:index, :create, :destroy, :edit, :update,:show]
   resources :user_dates
-  resources :users, only: [:index, :show, :edit, :update]
 
+  # フォロー機能する・外す 中間テーブルのためuserへネストする
+  resources :users, only: [:index, :show, :edit, :update] do
+  resource :relationships, only: [:create, :destroy]
+  get 'followings' => 'relationships#followings', as: 'follwings'
+  get 'followers' => 'relationships#followers', as: 'follwers'
+  end
 
 end

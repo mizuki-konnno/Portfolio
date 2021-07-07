@@ -14,17 +14,6 @@ class User < ApplicationRecord
   # 与フォロー関係から自分がフォローしている人
   has_many :followings, through: :relationships, source: :followed
 
-
-  def follow(user_id)
-    relationships.create(followed_id: user_id)
-  end
-  def unfollow(user_id)
-    relationships.find_by(followed_id: user_id).destroy
-  end
-  def following?(user)
-    followings.include?(user)
-  end
-
   # アソシエーション
   has_many :trainings, dependent: :destroy
   has_many :user_dates, dependent: :destroy
@@ -33,5 +22,23 @@ class User < ApplicationRecord
   enum gender: {男性: 0, 女性: 1}
   # 画像追加用のメソッド
   attachment :profile_image
+
+  # createメソッドはnewとsaveを合わせた挙動
+  def follow(user_id)
+    relationships.create(followed_id: user_id)
+  end
+
+  # テーブルには対応するレコードが１つしかない為、find_byによって１レコードを特定し削除
+  def unfollow(user_id)
+    relationships.find_by(followed_id: user_id).destroy
+  end
+
+  # include?は配列に引数が含まれているかで「true」「false」を返す
+  # ビューでフォローする/フォローを外すボタンで使用
+  def following?(user)
+    followings.include?(user)
+  end
+
+
 end
 
