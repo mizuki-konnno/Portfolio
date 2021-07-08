@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :menus, only: [:new, :create, :destroy]
   resources :training_contents, only: [:new, :create, :destroy]
-  resources :trainings, only: [:new, :index, :create, :show, :destroy]
+  resources :trainings, only: [:new, :index, :create, :show]
   resources :user_dates
 
   # フォロー機能する・外す 中間テーブルのためuserへネストする

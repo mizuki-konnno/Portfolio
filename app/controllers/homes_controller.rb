@@ -1,7 +1,7 @@
 class HomesController < ApplicationController
 
   def top
-    @trainings = Training.all
+    @trainings = current_user.trainings
   end
 
   def about
