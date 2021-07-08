@@ -7,38 +7,32 @@ class TrainingsController < ApplicationController
     @trainings = Training.new
   end
 
-  def show
-    @training = Training.find(params[:id])
+  def create
+    @trainings = Training.new(training_params)
+    @trainings.user_id = current_user.id
+    if @trainings.save
+      redirect_to training_path(@trainings)
+    else
+      render :new
+    end
   end
 
-  def create
-    Training.create(training_parameter)
-    redirect_to root_path
+  def show
+    @training = Training.find(params[:id])
+    @training_contents = TrainingContent.new
+    @training_menu_contents = @training.training_contents
   end
 
   def destroy
-    @training = Training.find(params[:id])
-    @training.destroy
-    redirect_to blogs_path, notice:"削除しました"
-  end
-
-  def edit
-    @training = Training.find(params[:id])
-  end
-
-  def update
-    @training = Training.find(params[:id])
-    if @training.update(blog_parameter)
-      redirect_to blogs_path, notice: "編集しました"
-    else
-      render 'edit'
-    end
+    @trainings = Training.find(params[:id])
+    @trainings.destroy
+    redirect_to user_path(current_user)
   end
 
   private
 
-  def training_parameter
-    params.require(:toraining).permit(:start_time)
+  def training_params
+    params.require(:training).permit(:start_time)
   end
 
 end
