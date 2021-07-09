@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col text-center my-5">
+      <h1>Date</h1>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-between">
+    <div class="col-3">
+      <h3>体重</h3>
+      <table class="table my-5">
+        <tr><th>開始時の体重</th><td><%= @user_traings_fast.body_weight %>kg</td></tr>
+        <tr><th>現在の体重</th><td><%= @user_traings_last.body_weight %>kg</td></tr>
+      </table>
+    </div>
+    <div class="col-8">
+      <%= line_chart @user_traings.group("date(start_time)").sum(:body_weight), suffix: "kg" %>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-between my-5">
+    <div class="col-3">
+      <h3>体脂肪率</h3>
+      <table class="table my-5">
+        <tr><th>開始時の体脂肪率</th><td><%= @user_traings_fast.body_fat %>%</td></tr>
+        <tr><th>現在の体脂肪率</th><td><%= @user_traings_last.body_fat %>%</td></tr>
+      </table>
+    </div>
+    <div class="col-8">
+      <%= line_chart @user_traings.group("date(start_time)").sum(:body_fat), suffix: "%" %>
+    </div>
+  </div>
+</div>
+

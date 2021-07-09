@@ -21,18 +21,13 @@ class TrainingsController < ApplicationController
     @training = Training.find(params[:id])
     @training_contents = TrainingContent.new
     @training_menu_contents = @training.training_contents
-  end
-
-  def destroy
-    @trainings = Training.find(params[:id])
-    @trainings.destroy
-    redirect_to user_path(current_user)
+    @trainings = Training.all
   end
 
   private
 
   def training_params
-    params.require(:training).permit(:start_time)
+    params.require(:training).permit(:start_time, :body_weight, :body_fat)
   end
 
 end

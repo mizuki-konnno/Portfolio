@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   get "/home/top/", to: "homes#top"
   get "/home/about/", to: "homes#about"
   get "/home/timer/", to: "homes#timer"
+  get "/home/date/", to: "homes#date"
 
   resources :menus, only: [:new, :create, :destroy]
   resources :training_contents, only: [:new, :create, :destroy]
-  resources :trainings, only: [:new, :index, :create, :show, :destroy]
+  resources :trainings, only: [:new, :index, :create, :show]
   resources :user_dates
 
   # フォロー機能する・外す 中間テーブルのためuserへネストする

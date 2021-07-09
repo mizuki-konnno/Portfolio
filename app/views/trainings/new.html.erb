@@ -9,8 +9,12 @@
     <div class="col text-center">
       <%= form_with model: @trainings, url: trainings_path, local:true do |f| %>
       <table class="table">
-        <tr><td><div class="time form-group text-center"><label for="training">トレーニング開始時間</label></div></td></tr>
-        <tr><td><div class="form-group text-center"><%= f.datetime_select :start_time %></div></td></tr>
+        <tr><td><div class="time form-group text-center"><label for="training">トレーニング開始時間が現在時刻で登録されます</label></div></td></tr>
+        <tr><td><div class="form-group text-center"><%= f.hidden_field :start_time, value: Time.now %></div></td></tr>
+        <tr><td><div class="form-group text-center">今日の体重</div></td></tr>
+        <tr><td><div class="form-group text-center"><%= f.number_field :body_weight, min: 0, max: 999, autocomplete: "off" %>kg</div></td></tr>
+        <tr><td><div class="form-group text-center">今日の体脂肪率</div></td></tr>
+        <tr><td><div class="form-group text-center"><%= f.number_field :body_fat, min: 0, max: 999, autocomplete: "off" %>%</div></td></tr>
         <tr><td class="text-center"><%= f.submit "Create trainig" %></td></tr>
       </table>
       <% end %>
