@@ -15,13 +15,16 @@ class TrainingsController < ApplicationController
     else
       render :new
     end
+
   end
 
   def show
     @training = Training.find(params[:id])
-    @training_contents = TrainingContent.new
+    @training_content = TrainingContent.new
     @training_menu_contents = @training.training_contents
     @trainings = Training.all
+    # 非同期化
+    @training_contents = @training.training_contents
   end
 
   private

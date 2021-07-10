@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def index
     # gem kaminari ページネーション機能
     @users = User.page(params[:page]).per(10)
+  
   end
 
   def show
@@ -22,6 +23,8 @@ class UsersController < ApplicationController
   end
 
 end
+
+
 
  private
 

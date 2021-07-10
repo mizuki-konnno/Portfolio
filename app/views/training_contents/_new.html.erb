@@ -1,0 +1,24 @@
+    <h2 class="text-center">トレーニング入力</h2>
+      <%= form_with model: @training_content, url: training_contents_path, local:true do |f| %>
+      <%= f.hidden_field :training_id, value: @training.id %>
+      <table class="table text-center">
+        <tr><th>menu</th><th>weight</th><th>回数</th><th>set数</th></tr>
+        <tr>
+          <th>
+            <%= f.collection_select :menu_id, Menu.all, :id, :training_menu  %>
+          </th>
+          <th>
+            <%= f.number_field :weight, min: 1, max: 999, autocomplete: "off" %>
+          </th>
+          <th>
+            <%= f.number_field :rep, min: 1, max: 99, autocomplete: "off" %>
+          </th>
+          <th>
+            <%= f.number_field :set, min: 1, max: 99, autocomplete: "off" %>
+          </th>
+          <th>
+            <%= f.submit "登録", class: 'btn btn-outline-info' %>
+          </th>
+        </tr>
+      </table>
+      <% end %>
