@@ -1,0 +1,22 @@
+      <table class="table text-center">
+        <tr><th>menu</th><th>weight</th><th>回数</th><th>set数</th></tr>
+        <% @training_menu_contents.each do |training_menu_content| %>
+        <tr>
+          <th>
+            <%= training_menu_content.menu.training_menu %>
+          </th>
+          <th>
+            <%= training_menu_content.weight %>
+          </th>
+          <th>
+            <%= training_menu_content.rep %>
+          </th>
+          <th>
+            <%= training_menu_content.set %>
+          </th>
+          <th>
+            <%= link_to "削除",training_content_path(training_menu_content.id), class:"btn btn-outline-danger  btn-sm ", method: :delete %>
+          </th>
+        </tr>
+        <% end %>
+      </table>

@@ -20,13 +20,24 @@
           </td>
           <td><%= link_to user.name, user_path(user) %></td>
           <td><%= user.gender %></td>
-          <td><% user ||= current_user %><a href= "<%= user_follwings_path(user) %>"><%= user.followings.count %></a></td>
-          <td><% user ||= current_user %><a href= "<%= user_follwers_path(user) %>"><%= user.followers.count %></a></td>
-          <td><%= render 'relationships/follow_button',user: user %></td>
+          <td id="followings_count_<%= user.id %>" >
+            <!--＠userが何も入ってない場合はcurrent_user_idが入る-->
+            <% user ||= current_user %>
+            <%= link_to user.followings.count,user_follwings_path(user) %>
+          </td>
+          <td id="followers_count_<%= user.id %>">
+            <% user ||= current_user %>
+            <%= link_to user.followers.count,user_follwers_path(user) %>
+          </td>
+          <!--自分を表示させない-->
+          <% unless current_user == user %>
+          <td id="follow_button_<%= user.id %>"><%= render partial: 'relationships/follow_button', locals: {user: user} %></td>
+          <% end %>
           <td><%= user.created_at.strftime('%Y/%m/%d') %></td>
         </tr>
         <% end %>
         <% end %>
+
       </table>
     </div>
   </div>
