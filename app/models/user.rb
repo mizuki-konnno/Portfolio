@@ -39,5 +39,16 @@ class User < ApplicationRecord
     followings.include?(user)
   end
   
+  # 検索機能
+  # scopeを使うことでModelを呼ぶ際、どこからでも使える
+  #ユーザー名による絞り込み
+  scope :get_by_name, ->(name) {
+  where("name like ?", "%#{name}%")
+  }
+  #性別による絞り込み
+  scope :get_by_gender, ->(gender) {
+  where(gender: gender)
+  }
+  
 end
 
