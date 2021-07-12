@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :name, presence: true
+
+
+
   #フォロー・フォロワー機能のリレーション
   # 自分がフォローされる側の関係性
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
@@ -38,7 +42,7 @@ class User < ApplicationRecord
   def following?(user)
     followings.include?(user)
   end
-  
+
   # 検索機能
   # scopeを使うことでModelを呼ぶ際、どこからでも使える
   #ユーザー名による絞り込み
@@ -49,6 +53,6 @@ class User < ApplicationRecord
   scope :get_by_gender, ->(gender) {
   where(gender: gender)
   }
-  
+
 end
 

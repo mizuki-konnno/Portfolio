@@ -1,5 +1,6 @@
 <!--トレーニング内容画面（カレンダー）-->
 <div class="container">
+  <%= render 'layouts/errors', obj: @training_content %>
   <div class="row my-5">
     <div class="col">
       <h1 class="text-center">トレーニング内容</h1>
@@ -8,7 +9,7 @@
   </div>
   <div class="row my-5">
     <div class="col-10 mx-auto">
-      <%= render 'training_contents/new',training_content: @traininig_content,training: @training %>
+      <%= render 'training_contents/new',training_content: @traininig_content %>
     </div>
   </div>
   <div class="row">

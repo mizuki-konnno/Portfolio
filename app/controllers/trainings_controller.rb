@@ -11,9 +11,8 @@ class TrainingsController < ApplicationController
     @trainings = Training.new(training_params)
     @trainings.user_id = current_user.id
     if @trainings.save
+      flash[:success] = 'トレーニングを開始しました。'
       redirect_to training_path(@trainings)
-    else
-      render :new
     end
 
   end
@@ -22,9 +21,8 @@ class TrainingsController < ApplicationController
     @training = Training.find(params[:id])
     @training_content = TrainingContent.new
     @training_menu_contents = @training.training_contents
-    @trainings = Training.all
     # 非同期化
-    @training_contents = @training.training_contents
+    # @training_contents = @training.training_contents
   end
 
   private
