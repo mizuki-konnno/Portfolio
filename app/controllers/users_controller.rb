@@ -26,11 +26,14 @@ class UsersController < ApplicationController
 
   def update
      @user = User.find(params[:id])
-     @user.update(user_params)
+     if @user.update(user_params)
+     flash[:success] = 'マイページの登録内容を更新しました。'
      redirect_to user_path(@user.id)
+     else
+     flash.now[:danger] = 'マイページの登録に失敗しました。'
+     render :edit
+     end
   end
-
-end
 
 
 
@@ -38,4 +41,5 @@ end
 
 def user_params
     params.require(:user).permit(:name, :profile_image, :introduction, :email, :gender, :height, :body_weight)
+end
 end

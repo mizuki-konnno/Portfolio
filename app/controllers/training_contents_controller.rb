@@ -1,15 +1,17 @@
 class TrainingContentsController < ApplicationController
 
   def new
-    @training_contents = TrainingContent.new
+    @training_content = TrainingContent.new
 
   end
 
   def create
     # @training = Training.find(params[:training_id])
-    @training_contents = TrainingContent.new(training_content_params)
-    if @training_contents.save
+    @training_content = TrainingContent.new(training_content_params)
+    if @training_content.save
      redirect_to request.referer
+    else
+      render 'new'
     end
   end
 

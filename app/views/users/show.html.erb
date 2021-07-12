@@ -1,5 +1,6 @@
 <!--user詳細画面-->
 <div class="container">
+
   <!--ログインしているユーザと詳細なので受け取ったidが等しいかで条件分岐-->
   <% if user_signed_in? && current_user.id.to_s == params[:id] %>
   <div class="row my-5">

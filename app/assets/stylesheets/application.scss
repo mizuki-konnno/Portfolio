@@ -19,11 +19,10 @@
 // ヘッダーへの背景画像
 .top-page-header{
   height: 40vh;
-  background-image: url('C5D97356-4043-455A-9F41-EAF1E14B0A3B_1_105_c.jpg');
+  background-image: url('C342A69E-8481-4575-8892-60274F29AD22_1_105_c.jpg');
   background-repeat: no-repeat;
-  background-position: center top ;
+  background-position: center bottom ;
   background-size: cover;
-  opacity: 0.8;
 }
 
 .top-page-footer{
@@ -32,7 +31,6 @@
   background-repeat: no-repeat;
   background-position: center center ;
   background-size: cover;
-  opacity: 0.8;
 }
 
 // メインページへの背景画像
@@ -42,7 +40,7 @@
   background-blend-mode:lighten;
 }
 
-// トレーニングした日にちの色を変える
+// カレンダーの日にちの色を変える
 .simple-calendar {
  .day {}
  .wday-0 {
@@ -53,9 +51,7 @@
  .wday-3 {}
  .wday-4 {}
  .wday-5 {}
- .wday-6 {
-   color: blue;
- }
+ .wday-6 {}
  .today {}
  .past {}
  .future {}
@@ -63,17 +59,13 @@
  .prev-month {}
  .next-month { }
  .current-month {}
-
- .has-events {
-   background: #98fb98;
- }
 }
 
 /* ---------------------------- */
 /* ---- ハンバーガーアイコン ---- */
 /* ---------------------------- */
 #hm-icon {
-  // position: fixed;
+  position: fixed;
   right: 20px;
   top: 20px;
   z-index: 10;
@@ -142,3 +134,16 @@
   text-decoration: none;
   font-weight: bold;
 }
+
+.navbar{
+  display: block;
+  position: relative;
+  z-index: 9999;
+}
+
+// .main{
+// display: block;
+// position: relative;
+// z-index: 1;
+// }
+// // relative
