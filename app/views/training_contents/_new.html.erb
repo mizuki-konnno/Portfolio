@@ -1,5 +1,5 @@
 <h2 class="text-center">トレーニング入力</h2>
-  <%= form_with model: @training_content, url: training_contents_path, local:true do |f| %>
+  <%= form_with model: @training_content, url: training_training_contents_path(@training), remote:true do |f| %>
   <%= f.hidden_field :training_id, value: @training.id %>
   <table class="table text-center">
     <tr><th>menu</th><th>weight</th><th>回数</th><th>set数</th></tr>

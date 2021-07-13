@@ -15,7 +15,8 @@
         <%= training_menu_content.set %>
       </th>
       <th>
-        <%= link_to "削除",training_content_path(training_menu_content.id), class:"btn btn-outline-danger  btn-sm ", method: :delete %>
+        <!--ネストしているためidをtrainig.idとtrainig.content.idの２つ指定する-->
+        <%= link_to "削除",training_training_content_path(training_menu_content.training.id,training_menu_content.id), class:"btn btn-outline-danger  btn-sm ", method: :delete, remote: true %>
       </th>
     </tr>
     <% end %>

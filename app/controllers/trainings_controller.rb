@@ -13,8 +13,9 @@ class TrainingsController < ApplicationController
     if @trainings.save
       flash[:success] = 'トレーニングを開始しました。'
       redirect_to training_path(@trainings)
+    else
+     render :new
     end
-
   end
 
   def show
