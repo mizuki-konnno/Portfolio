@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
+  # ログインしていないとabout以外のページを閲覧できない
   before_action :authenticate_user!,except:[:about]
+  # 直打ちの禁止
+  # before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
     flash[:success] = 'ログインしました。'

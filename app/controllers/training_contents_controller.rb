@@ -6,7 +6,10 @@ class TrainingContentsController < ApplicationController
   end
 
   def create
-    # @training = Training.find(params[:training_id])
+    # 非同期通信化
+    # @training = Training.find(params[:id])
+    # @training_menu_contents = @training.training_contents
+
     @training_content = TrainingContent.new(training_content_params)
     if @training_content.save
      redirect_to request.referer

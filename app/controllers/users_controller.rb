@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+# editページに直打ち禁止
+ before_action :correct_user,only: [:edit]
 
   def index
     # gem kaminari ページネーション機能
@@ -35,7 +37,12 @@ class UsersController < ApplicationController
      end
   end
 
-
+  def correct_user
+        @user = User.find(params[:id])
+    unless @user.id == current_user.id
+      redirect_to users_path
+    end
+  end
 
  private
 
