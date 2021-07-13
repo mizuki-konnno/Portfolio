@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   get "/home/date/", to: "homes#date"
 
   resources :menus, only: [:new, :create, :destroy]
-  resources :training_contents, only: [:new, :create, :destroy]
-  resources :trainings, only: [:new, :index, :create, :show]
   resources :user_dates
+
+  resources :trainings, only: [:new, :index, :create, :show] do
+   resources :training_contents, only: [:new, :create, :destroy]
+  end
 
   # フォロー機能する・外す 中間テーブルのためuserへネストする
   resources :users, only: [:index, :show, :edit, :update] do
