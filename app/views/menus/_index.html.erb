@@ -1,11 +1,11 @@
  <!--トレーニングメニュー一覧-->
  <div class="row-12">
-    <div class="col-4 mx-auto">
+    <div class="col-8 col-md-8 mx-auto">
       <h2 class="text-center my-5">My Training</h2>
     </div>
     <!--ログインしているユーザと詳細なので受け取ったidで条件分岐-->
     <% if user_signed_in? && current_user.id.to_s == params[:id] %>
-    <div class="col-4 mx-auto">
+    <div class="col-8 col-md-8 mx-auto">
       <h5 class="text-center my-5"><%= link_to "トレーニングメニューの登録", new_menu_path, class:"btn btn-link  btn-sm mypage_edit" %></h2>
     </div>
     <div class="col">

@@ -5,18 +5,18 @@
     </div>
   </div>
   <div class="my-3 text-center h1"><h1>Menu</h1></div>
-    <div class="row d-flex justify-content-center">
-      <div class="col-xs-5 mr-5 d-flex align-items-center mt-5 menu">
+    <div class="row text-center ">
+      <div class="col-12 col-md-6 menu mb-5">
         <%= link_to home_date_path do %>
-        <%= image_tag 'EADD2DD9-1AB5-4805-918C-061572CACB9B_1_105_c.jpg', :size =>'400x400' %>
+        <%= image_tag 'EADD2DD9-1AB5-4805-918C-061572CACB9B_1_105_c.jpg', :size =>'475x475' %>
          <div class="mask">
 		       <div class="caption">My Deta</div>
 	       </div>
 	      <% end %>
       </div>
-      <div class="col-xs-5 mt-5 menu">
+      <div class="col-12 col-md-6 menu mb-5">
         <%= link_to home_timer_path, data: { 'turbolinks': false } do %>
-        <%= image_tag '0A9B14AE-E0B5-4F0F-A25B-A4DA9972AAC7_1_105_c.jpg', :size =>'400x400' %>
+        <%= image_tag '0A9B14AE-E0B5-4F0F-A25B-A4DA9972AAC7_1_105_c.jpg', :size =>'475x475' %>
           <div class="mask">
 		        <div class="caption">Timer</div>
 	        </div>
@@ -24,18 +24,18 @@
       </div>
     </div>
 
-    <div class="row d-flex justify-content-center mt-5">
-      <div class="col-xs-5 menu">
+    <div class="row  text-center ">
+      <div class="col-12 col-md-6  menu mb-5">
         <%= link_to users_path do %>
-        <%= image_tag '615EBD84-A735-4A5A-8113-B9F624F2EF5D_1_105_c.jpg', :size =>'400x400' %>
+        <%= image_tag '615EBD84-A735-4A5A-8113-B9F624F2EF5D_1_105_c.jpg', :size =>'475x475' %>
           <div class="mask">
 		        <div class="caption">Other Users</div>
 	        </div>
 	      <% end %>
       </div>
-    <div class="col-xs-5 ml-5 d-flex align-items-center menu">
+    <div class="col-12 col-md-6  menu mb-5">
       <%= link_to user_path(current_user.id) do %>
-      <%= image_tag '8DA4A52F-7940-45B5-8113-847D53FA55DC_1_105_c.jpg', :size =>'400x400' %>
+      <%= image_tag '8DA4A52F-7940-45B5-8113-847D53FA55DC_1_105_c.jpg', :size =>'475x475' %>
         <div class="mask">
 		      <div class="caption">My Page</div>
 	      </div>
