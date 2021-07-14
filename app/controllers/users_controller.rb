@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     # gem kaminari ページネーション機能
-    @users = User.page(params[:page]).per(10)
+    @users = User.page(params[:page]).per(8)
     # パラメータとして名前か性別を受け取っている場合は絞って検索する
     if params[:name].present?
        @users = @users.get_by_name params[:name]
