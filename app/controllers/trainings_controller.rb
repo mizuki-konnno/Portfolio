@@ -22,8 +22,8 @@ class TrainingsController < ApplicationController
     @training = Training.find(params[:id])
     @training_content = TrainingContent.new
     @training_menu_contents = @training.training_contents
-    # 非同期化
-    # @training_contents = @training.training_contents
+    @user = current_user
+    @menu = @user.menus
   end
 
   private

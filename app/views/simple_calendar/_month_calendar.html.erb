@@ -1,6 +1,6 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-    <div class="h1 mt-5 mb-3"><span class="calendar-title"><%= start_date.year %>年 <%= t('date.month_names')[start_date.month] %></span></div>
+    <div class="h1 mt-5 mb-3"><i class="far fa-calendar-alt"></i> <span class="calendar-title"><%= start_date.year %>年 <%= t('date.month_names')[start_date.month] %></span></div>
     <%= link_to t('simple_calendar.previous', default: '先月'), calendar.url_for_previous_view %>
     <%= link_to t('simple_calendar.next', default: '来月'), calendar.url_for_next_view %>
   </div>
