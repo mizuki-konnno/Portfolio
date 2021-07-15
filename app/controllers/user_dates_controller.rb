@@ -1,2 +1,0 @@
-class UserDatesController < ApplicationController
-end
