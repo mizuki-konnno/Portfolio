@@ -5,7 +5,7 @@
     <tr><th>menu</th><th>weight</th><th>回数</th><th>set数</th></tr>
     <tr>
       <th>
-        <%= f.collection_select :menu_id, Menu.all, :id, :training_menu  %>
+        <%= f.collection_select( :menus, @menu, :id, :training_menu) %>
       </th>
       <th>
         <%= f.number_field :weight, min: 1, max: 999, autocomplete: "off" %>

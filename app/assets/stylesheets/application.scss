@@ -18,7 +18,7 @@
 
 // ヘッダーへの背景画像
  .header{
-  height: 80vh;
+  height: 100vh;
 }
 
 .image1 {
@@ -51,6 +51,8 @@
 
 .top-page-footer{
   height: 20vh;
+  position: relative;
+  bottom: 0;
   background-image: url('C5D97356-4043-455A-9F41-EAF1E14B0A3B_1_105_c.jpg');
   background-repeat: no-repeat;
   background-position: center center ;
@@ -166,4 +168,18 @@
   display: block;
   position: relative;
   z-index: 9999;
+}
+
+ .image{
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  width: 100px;  /* 縦横を同じ値にする */
+  height: 100px;  /* 縦横を同じ値にする */
+  object-fit: cover; /* 縦横比固定したまま上2つの縦横の範囲内に収まるように配置する */
+}
+
+.image_show{
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
 }
