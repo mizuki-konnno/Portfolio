@@ -1,0 +1,45 @@
+<div class="container main">
+  <div class="row">
+    <div class="col my-5">
+      <%= render 'trainings/index', trainings: @trainings %>
+    </div>
+  </div>
+  <div class="my-3 pb-5 text-center h1"><h1><i class="fas fa-search-minus"></i> Menu</h1></div>
+    <div class="row text-center ">
+      <div class="col-12 col-md-6 menu mb-5">
+        <%= link_to home_date_path do %>
+        <%= image_tag 'EADD2DD9-1AB5-4805-918C-061572CACB9B_1_105_c.jpg', :size =>'475x475' %>
+         <div class="mask">
+		       <div class="caption"><i class="far fa-chart-bar"></i> My Deta</div>
+	       </div>
+	      <% end %>
+      </div>
+      <div class="col-12 col-md-6 menu mb-5">
+        <%= link_to home_timer_path, data: { 'turbolinks': false } do %>
+        <%= image_tag '0A9B14AE-E0B5-4F0F-A25B-A4DA9972AAC7_1_105_c.jpg', :size =>'475x475' %>
+          <div class="mask">
+		        <div class="caption "><i class="far fa-clock"></i> Timer</div>
+	        </div>
+	      <% end %>
+      </div>
+    </div>
+
+    <div class="row  text-center ">
+      <div class="col-12 col-md-6  menu mb-5">
+        <%= link_to users_path do %>
+        <%= image_tag '615EBD84-A735-4A5A-8113-B9F624F2EF5D_1_105_c.jpg', :size =>'475x475' %>
+          <div class="mask">
+		        <div class="caption"><i class="fas fa-users"></i> Other Users</div>
+	        </div>
+	      <% end %>
+      </div>
+    <div class="col-12 col-md-6  menu mb-5">
+      <%= link_to user_path(current_user.id) do %>
+      <%= image_tag '8DA4A52F-7940-45B5-8113-847D53FA55DC_1_105_c.jpg', :size =>'475x475' %>
+        <div class="mask">
+		      <div class="caption"><i class="far fa-user"></i> My Page</div>
+	      </div>
+	    <% end %>
+    </div>
+  </div>
+</div>

@@ -5,10 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true
+  validates :name, length: { in: 2..20 }
 
-
-
-  #フォロー・フォロワー機能のリレーション
+  # フォロー・フォロワー機能のリレーション
   # 自分がフォローされる側の関係性
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   # 自分がフォローする側の関係性
@@ -20,10 +19,9 @@ class User < ApplicationRecord
 
   # アソシエーション
   has_many :trainings, dependent: :destroy
-  has_many :user_dates, dependent: :destroy
   has_many :menus, dependent: :destroy
   # 性別
-  enum gender: {男性: 0, 女性: 1}
+  enum gender: { 男性: 0, 女性: 1 }
   # 画像追加用のメソッド
   attachment :profile_image
 
@@ -45,14 +43,12 @@ class User < ApplicationRecord
 
   # 検索機能
   # scopeを使うことでModelを呼ぶ際、どこからでも使える
-  #ユーザー名による絞り込み
+  # ユーザー名による絞り込み
   scope :get_by_name, ->(name) {
-  where("name like ?", "%#{name}%")
+    where("name like ?", "%#{name}%")
   }
-  #性別による絞り込み
+  # 性別による絞り込み
   scope :get_by_gender, ->(gender) {
-  where(gender: gender)
+    where(gender: gender)
   }
-
 end
-

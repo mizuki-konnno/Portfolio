@@ -1,7 +1,5 @@
 class HomesController < ApplicationController
-
   def top
-    @trainings = current_user.trainings
   end
 
   def about
@@ -14,6 +12,10 @@ class HomesController < ApplicationController
     @user_traings = current_user.trainings
     @user_traings_fast = @user_traings.first
     @user_traings_last = @user_traings.last
+  end
+
+  def home
+    @trainings = current_user.trainings
   end
 
 end
