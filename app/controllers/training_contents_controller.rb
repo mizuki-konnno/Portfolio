@@ -1,8 +1,6 @@
 class TrainingContentsController < ApplicationController
-
   def new
     @training_content = TrainingContent.new
-
   end
 
   def create
@@ -26,8 +24,8 @@ class TrainingContentsController < ApplicationController
 
     @training_menu_content = TrainingContent.find(params[:id])
     if @training_menu_content.destroy
-     # 非同期通信のためコメントアウト
-     # redirect_to request.referer
+      # 非同期通信のためコメントアウト
+      # redirect_to request.referer
     end
   end
 
@@ -36,5 +34,4 @@ class TrainingContentsController < ApplicationController
   def training_content_params
     params.require(:training_content).permit(:training_id, :menu_id, :set, :weight, :rep)
   end
-
 end

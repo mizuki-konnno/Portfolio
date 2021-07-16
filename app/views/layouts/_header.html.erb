@@ -5,7 +5,7 @@
         <div id="sp-menu">
           <ul>
             <% if user_signed_in? %>
-              <li><%= link_to ' Home',root_path,class: 'fas fa-home nav-link text-info h2' %></li>
+              <li><%= link_to ' Home',home_home_path,class: 'fas fa-home nav-link text-info h2' %></li>
               <li><%= link_to ' MyPage',user_path(current_user.id),class: 'fas fa-user nav-link text-info h2' %></li>
               <li><%= link_to ' Timer',home_timer_path, data: { 'turbolinks': false },class: 'far fa-clock nav-link text-info h2'%></li>
               <li><%= link_to ' logout', destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-info h2' %></li>

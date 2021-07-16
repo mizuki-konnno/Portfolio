@@ -44,3 +44,54 @@
 	transform:		scale(2);
 }
 
+// topページ
+ .bg1{
+    background-image: image-url("1424E307-33EE-4840-9DF1-0F525548FA53_1_105_c.jpeg");
+    background-size: cover;
+    background: contain;
+    height: 120vh;
+    margin-bottom: 0;
+    vertical-align: top bottom;
+    width: 100%;
+　　max-width: 100%;
+  }
+
+  // aboutページ
+  .bg2{
+    background-image: image-url("8C4D7BAD-6A26-49DE-8761-7BABD9B673AC_1_105_c.jpg");
+    background-size: cover;
+    background: contain;
+    height: 100vh;
+    margin-bottom: 0;
+    vertical-align: top bottom;
+    width: 100%;
+　　max-width: 100%;
+  }
+
+  .aboutmenu1{
+    background-image: image-url("BC184714-7C87-430D-B5B1-86CF5F8B5B3F_1_105_c.jpg");
+    background-size: cover;
+    background: contain;
+    height: 60vh;
+    width: 100%;
+　　max-width: 100%;
+  }
+
+  .aboutmenu2{
+    background-image: image-url("A770D602-97F6-4BBA-B0C6-2AA7E147FD5E_1_105_c.jpg");
+    background-size: cover;
+    background: contain;
+    height: 60vh;
+    width: 100%;
+　　max-width: 100%;
+　　background-position: center bottom;
+  }
+
+  .aboutmenu3{
+    background-image: image-url("D14C28AC-F451-4BA7-9DDC-039BD12A560B_1_105_c.jpg");
+    background-size: cover;
+    background: contain;
+    height: 60vh;
+    width: 100%;
+　　max-width: 100%;
+  }

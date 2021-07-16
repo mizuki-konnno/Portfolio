@@ -51,11 +51,10 @@ group :development do
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem "factory_bot_rails"
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -72,8 +71,10 @@ gem 'font-awesome-sass', '~> 5.13'
 
 gem 'kaminari', '~> 0.17.0'
 
-gem 'chart-js-rails', '~>0.1.4'
-
 gem 'simple_calendar', '~> 2.0'
 
 gem 'chartkick'
+
+gem 'rubocop-airbnb'
+
+gem 'pry-byebug', group: :development

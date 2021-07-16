@@ -7,19 +7,19 @@ Rails.application.routes.draw do
   get "/home/about/", to: "homes#about"
   get "/home/timer/", to: "homes#timer"
   get "/home/date/", to: "homes#date"
+  get "/home/home/", to: "homes#home"
 
   resources :menus, only: [:new, :create, :destroy]
   resources :user_dates
 
   resources :trainings, only: [:new, :index, :create, :show] do
-   resources :training_contents, only: [:new, :create, :destroy]
+    resources :training_contents, only: [:new, :create, :destroy]
   end
 
   # フォロー機能する・外す 中間テーブルのためuserへネストする
   resources :users, only: [:index, :show, :edit, :update] do
-  resource :relationships, only: [:create, :destroy]
-  get 'followings' => 'relationships#followings', as: 'follwings'
-  get 'followers' => 'relationships#followers', as: 'follwers'
+    resource :relationships, only: [:create, :destroy]
+    get 'followings' => 'relationships#followings', as: 'follwings'
+    get 'followers' => 'relationships#followers', as: 'follwers'
   end
-
 end

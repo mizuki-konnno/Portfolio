@@ -14,7 +14,7 @@ class TrainingsController < ApplicationController
       flash[:success] = 'トレーニングを開始しました。'
       redirect_to training_path(@trainings)
     else
-     render :new
+      render :new
     end
   end
 
@@ -31,5 +31,4 @@ class TrainingsController < ApplicationController
   def training_params
     params.require(:training).permit(:start_time, :body_weight, :body_fat)
   end
-
 end

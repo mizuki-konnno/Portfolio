@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
   # ログインしていないとabout以外のページを閲覧できない
-  before_action :authenticate_user!,except:[:about]
+  before_action :authenticate_user!, except: [:top,:about]
   # 直打ちの禁止
   # before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
     flash[:success] = 'ログインしました。'
-    root_path
+    home_home_path
   end
 
   def after_sign_up_path_for(resource)
