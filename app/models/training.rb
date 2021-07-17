@@ -13,4 +13,11 @@ class Training < ApplicationRecord
       errors.add(:user_id, "既にトレーニング開始済みの為、カレンダーより日にちを選択して下さい")
     end
   end
+
+  # validate :not_before_today
+
+  # def not_before_today
+    # errors.add(:open_day, 'Please set today or after today') if open_day.nil? || open_day < Date.today
+  # end
+
 end
