@@ -9,6 +9,7 @@
     <div class="col text-center">
       <%= form_with model: @trainings, url: trainings_path, local:true do |f| %>
       <table class="table">
+        <tr><td><p class=" form-group text-center">既にトレーニング開始を行なっている場合はカレンダーよりアクセスして下さい。<p></td></tr>
         <tr><td><div class="time form-group text-center"><label for="training">トレーニング開始時間が現在時刻で登録されます</label></div></td></tr>
         <tr><td><div class="form-group text-center"><%= f.hidden_field :start_time, value: Time.zone.now %></div></td></tr>
         <tr><td><div class="form-group text-center">今日の体重</div></td></tr>

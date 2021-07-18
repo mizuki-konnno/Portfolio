@@ -2,9 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col text-center">
-       <% if Training.where(user_id: current_user,start_time: Date.today).exists? %>
 　　　<%= link_to 'トレーニング開始', new_training_path, class: " btn btn-outline-danger mr-5" %>
-　　　<% end %>
       <%= month_calendar events: @trainings do |date, training| %>
       <%= date %>
       <% training.each do |training| %>

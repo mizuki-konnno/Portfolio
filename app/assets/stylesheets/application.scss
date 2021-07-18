@@ -22,19 +22,19 @@
 }
 
 .image1 {
-  background-image: url(C342A69E-8481-4575-8892-60274F29AD22_1_105_c.jpeg);
+  background-image:image-url("C342A69E-8481-4575-8892-60274F29AD22_1_105_c.jpeg");
 }
 .image2 {
-  background-image: url(C5D97356-4043-455A-9F41-EAF1E14B0A3B_1_105_c.jpeg);
+  background-image:image-url("C5D97356-4043-455A-9F41-EAF1E14B0A3B_1_105_c.jpeg");
 }
 .image3 {
-  background-image: url(75B0183F-82AC-403F-8AC0-08517A4629A6_1_105_c.jpeg);
+  background-image:image-url("75B0183F-82AC-403F-8AC0-08517A4629A6_1_105_c.jpeg");
 }
 .image4 {
-  background-image: url(79189A48-49A8-40FC-BBC7-801F26A05537_1_105_c.jpeg);
+  background-image:image-url("79189A48-49A8-40FC-BBC7-801F26A05537_1_105_c.jpeg");
 }
 .image5 {
-  background-image: url(F14FB694-382F-4C42-978D-4DAA2F6EDACF_1_105_c.jpeg);
+  background-image:image-url("F14FB694-382F-4C42-978D-4DAA2F6EDACF_1_105_c.jpeg");
 }
 
 .top-page-header {
@@ -46,7 +46,7 @@
 		 width: 250px;
 		 height: 60px;
 		font-size: 0;
-		background: url(D86020E8-4217-4474-953C-75DA8D886567_4_5005_c.jpeg);
+		background:image-url("D86020E8-4217-4474-953C-75DA8D886567_4_5005_c.jpeg");
 		background-size: cover;
 		margin: 20px;
 	}
@@ -55,7 +55,7 @@
   height: 20vh;
   position: relative;
   bottom: 0;
-  background-image: url('C5D97356-4043-455A-9F41-EAF1E14B0A3B_1_105_c.jpg');
+  background-image:image-url("C5D97356-4043-455A-9F41-EAF1E14B0A3B_1_105_c.jpeg");
   background-repeat: no-repeat;
   background-position: center center ;
   background-size: cover;
@@ -63,7 +63,7 @@
 
 // メインページへの背景画像
 .background {
-  background-image: image-url('board-3291433_1920.jpg');
+  background-image: image-url("board-3291433_1920.jpg");
   background-color:rgba(255,255,255,0.6);
   background-blend-mode:lighten;
 }
