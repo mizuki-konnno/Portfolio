@@ -13,7 +13,7 @@
       </table>
     </div>
     <div class="col-12 col-md-8">
-      <%= line_chart @user_traings.group("date(start_time)").sum(:body_weight), suffix: "kg", curve: false %>
+      <%= line_chart @user_traings.group("date(start_time)").average(:body_weight), suffix: "kg", curve: false %>
     </div>
   </div>
   <div class="row d-flex justify-content-between my-5">
@@ -25,7 +25,7 @@
       </table>
     </div>
     <div class="col-12 col-md-8">
-      <%= line_chart @user_traings.group("date(start_time)").sum(:body_fat), suffix: "%", curve: false %>
+      <%= line_chart @user_traings.group("date(start_time)").average(:body_fat), suffix: "%", curve: false %>
     </div>
   </div>
 </div>
