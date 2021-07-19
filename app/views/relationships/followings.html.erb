@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row slide-bottom show">
     <div class="col text-center mt-5">
       <h2>Follow User</h2>
     </div>
@@ -7,7 +7,7 @@
       <%= link_to "Other Usersへ戻る", users_path, class:"btn btn-link  btn-sm mypage_edit" %>
     </div>
   </div>
- <div class="row">
+ <div class="row slide-bottom show">
     <% if @users.exists? %>
     <% @users.each do |user| %>
       <div class="col-md-3" style="text-align:center; padding-bottom:20px;">
@@ -40,7 +40,9 @@
     <% end %>
   </div>
    <% else %>
-    <p class="text-center h3 my-5">Follow Userはいません</p>
+    <div class="col-md-12 text-center my-5">
+      <h3>Follow Userはいません</h3>
+    </div>
    <% end %>
   </div>
  </div>

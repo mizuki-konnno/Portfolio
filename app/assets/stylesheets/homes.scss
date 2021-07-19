@@ -95,5 +95,11 @@
     width: 100%;
 　　max-width: 100%;
   }
-  
-  
+
+
+/* フェードイン用のCSS */
+.slide-bottom {
+   opacity: 0;
+   transform: translateY(20px);
+   transition: all 1.3s 0s ease-out;
+ }

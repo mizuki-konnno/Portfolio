@@ -1,7 +1,7 @@
 <!--user編集画面-->
 <div class="container">
   <%= render 'layouts/errors', obj: @user %>
-  <div class="row">
+  <div class="row slide-bottom show">
     <div class="col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0 mx-auto">
      <h2 class='my-3 py-3 text-center'>My pege 情報入力</h2>
       <%= form_with model:@user, local:true do |f| %>

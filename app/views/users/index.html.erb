@@ -5,12 +5,12 @@
       <h2>Other User</h2>
     </div>
   </div>
-  <div class="row">
+  <div class="row slide-bottom show">
     <div class="col text-right my-5">
       <%= render 'search' %>
     </div>
   </div>
-   <div class="row">
+   <div class="row slide-bottom show">
     <% @users.each do |user| %>
     <!--自分を表示させない-->
     <% unless current_user == user %>
@@ -42,7 +42,7 @@
     <% end %>
     <% end %>
   </div>
-  <div class="row ml-5">
+  <div class="row ml-5 slide-bottom show">
     <div class="col-2 mx-auto">
       <!--# gem kaminari ページネーション機能-->
       <%= paginate(@users) %>
