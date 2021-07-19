@@ -1,7 +1,7 @@
 <!--カレンダー-->
 <div class="container">
   <div class="row">
-    <div class="col text-center">
+    <div class="col text-center slide-bottom show">
 　　　<%= link_to 'トレーニング開始', new_training_path, class: " btn btn-outline-danger mr-5" %>
       <%= month_calendar events: @trainings do |date, training| %>
       <%= date %>
