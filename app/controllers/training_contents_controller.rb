@@ -9,12 +9,9 @@ class TrainingContentsController < ApplicationController
     @training_menu_contents = @training.training_contents
 
     @training_content = TrainingContent.new(training_content_params)
-    if @training_content.save
+    @training_content.save
     # 非同期通信のためコメントアウト
     # redirect_to request.referer
-    else
-      render 'new'
-    end
   end
 
   def destroy
@@ -23,10 +20,9 @@ class TrainingContentsController < ApplicationController
     @training_menu_contents = @training.training_contents
 
     @training_menu_content = TrainingContent.find(params[:id])
-    if @training_menu_content.destroy
+    @training_menu_content.destroy
       # 非同期通信のためコメントアウト
       # redirect_to request.referer
-    end
   end
 
   private
