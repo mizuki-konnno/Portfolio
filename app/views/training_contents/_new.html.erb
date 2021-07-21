@@ -8,13 +8,13 @@
         <%= f.collection_select :menu_id, @menu, :id, :training_menu  %>
       </th>
       <th>
-        <%= f.number_field :weight, min: 1, max: 999, autocomplete: "off" %>
+        <%= f.number_field :weight, min: 1, max: 999, autocomplete: "off", class: "training" %>
       </th>
       <th>
-        <%= f.number_field :rep, min: 1, max: 99, autocomplete: "off" %>
+        <%= f.number_field :rep, min: 1, max: 99, autocomplete: "off", class: "training" %>
       </th>
       <th>
-        <%= f.number_field :set, min: 1, max: 99, autocomplete: "off" %>
+        <%= f.number_field :set, min: 1, max: 99, autocomplete: "off", class: "training" %>
       </th>
       <th>
         <%= f.submit "登録", class: 'btn btn-outline-info' %>
