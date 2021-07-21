@@ -2,21 +2,22 @@
 <div class="container">
   <%= render 'layouts/errors', obj: @training_content %>
   <div class="row my-5 slide-bottom show">
-    <div class="col">
+    <div class="col-11 col-md-10 mx-auto">
       <h1 class="text-center"><i class="fas fa-dumbbell"></i> トレーニング内容</h1>
       <h2 class="text-center"><%= @training.start_time.strftime("%Y-%m-%d") %></h2>
+      <h2 class="text-center"><%= @training.start_time.strftime("%H:%M") %></h2>
     </div>
   </div>
   <div class="col-8 col-md-8 mx-auto">
     <h5 class="text-center my-5"><%= link_to "トレーニングメニューの登録", new_menu_path, class:"btn btn-link  btn-sm mypage_edit" %></h2>
   </div>
   <div class="row my-5 slide-bottom show">
-    <div class="col-10 mx-auto">
+    <div class="col-12 col-md-10 mx-auto">
       <%= render 'training_contents/new',training_content: @traininig_content %>
     </div>
   </div>
   <div class="row slide-bottom show">
-    <div class="col-10 mx-auto" id ="training">
+    <div class="col-12 col-md-10 mx-auto" id ="training">
       <%= render 'training_contents/index',training_menu_contents: @training_menu_contents %>
     </div>
   </div>
