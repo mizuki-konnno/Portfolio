@@ -16,6 +16,12 @@
  */
 @import "bootstrap";
 
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
 // ヘッダーへの背景画像
  .header{
   height: 100vh;
@@ -40,6 +46,8 @@
 .top-page-header {
 	float: left;
 	padding: 3px 0;
+	position: fixed;
+	z-index: 9999;
 }
 .top-page-header a {
 		display: block;

@@ -1,6 +1,12 @@
 <div class="container">
   <div class="row slide-bottom show">
-    <div class="col text-center mt-5">
+      <div class="col-lg-10 col-md-10 mt-3 mx-auto">
+      <nav class="nav nav-pills nav-fill mb-3">
+        <%= link_to "Followers","#", class: "nav-item nav-link active" %>
+        <%= link_to "Followings", user_follwings_path(@user), class: "nav-item nav-link" %>
+      </nav>
+      </div>
+    <div class="col-10 col-md-10 text-center mt-5 mx-auto">
       <h2>Followers User</h2>
     </div>
     <div class="col-md-12 my-5 text-center">
