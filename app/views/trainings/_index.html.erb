@@ -1,16 +1,12 @@
 <!--カレンダー-->
-<div class="container">
-  <div class="row">
-    <div class="col text-center slide-bottom show">
-　　　<%= link_to 'トレーニング開始', new_training_path, class: " btn btn-outline-danger mr-5" %>
+    <div>
+      <%= link_to 'トレーニング開始', new_training_path, class: " btn btn-outline-danger mr-5 mx-auto" %>
       <%= month_calendar events: @trainings do |date, training| %>
-      <%= date %>
+      <%= date.strftime("%d") %>
       <% training.each do |training| %>
       <div>
-        <%= link_to training.start_time.strftime("%H:%M"), training_path(training) %>
+        <%= link_to training.start_time.strftime("○"), training_path(training) %>
       </div>
       <% end %>
       <% end %>
     </div>
-  </div>
-</div>

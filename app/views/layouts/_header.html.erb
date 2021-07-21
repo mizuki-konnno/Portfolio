@@ -33,7 +33,7 @@
     </div>
 </header>
 
-<!--スマホサイズ時メニューバー表示　-->
+<!--スマホサイズ時メニューバー表示 -->
 <ul class=" bottom-nav fixed-bottom w-100 shadow-lg list-unstyled list-group list-group-horizontal text-center">
   <button class="mx-auto list-group-item list-group-item-action">
     <%= link_to home_date_path do %>
@@ -41,7 +41,7 @@
     <% end %>
   </button>
   <button class="mx-auto list-group-item list-group-item-action">
-    <%= link_to home_timer_path do %>
+    <%= link_to home_timer_path, data: { 'turbolinks': false } do %>
       <p><i class="far fa-clock"></i></p>
     <% end %>
   </button>
@@ -50,7 +50,7 @@
       <p><i class="fas fa-users"></i></p>
     <% end %>
   </button>
-　<% if user_signed_in? %>
+  <% if user_signed_in? %>
   <button class="mx-auto list-group-item list-group-item-action">
     <%= link_to user_path(current_user.id) do %>
       <p><i class="far fa-user"></i></p>
