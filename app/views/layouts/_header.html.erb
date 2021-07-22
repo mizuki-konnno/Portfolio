@@ -1,30 +1,33 @@
 <header>
-    <div class="container">
-        <p class= 'top-page-header'><a class="navbar-brand " href="/"></a></p>
-        <div id="sp-menu">
-          <ul>
+  <nav class="navbar navbar-dark fixed-top navbar-expand-lg header-color bg-dark">
+    <div class="container-fluid">
+        <div class="topfont">
+          <%= link_to root_path, class: "navbar-brand text-white" do %>
+           <%= image_tag "D86020E8-4217-4474-953C-75DA8D886567_4_5005_c.jpeg", { height: 30 } %>
+          <% end %>
+        </div>
+        <!-- ハンバーガーメニュー -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- ナビゲーションメニュー -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
-              <li><%= link_to ' Home',home_home_path,class: 'fas fa-home nav-link text-info h2' %></li>
-              <li><%= link_to ' MyPage',user_path(current_user.id),class: 'fas fa-user nav-link text-info h2' %></li>
-              <li><%= link_to ' Timer',home_timer_path, data: { 'turbolinks': false },class: 'far fa-clock nav-link text-info h2'%></li>
-              <li><%= link_to ' logout', destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-info h2' %></li>
+              <li><%= link_to ' Home',home_home_path,class: 'nav-link text-white h4' %></li>
+              <li><%= link_to ' MyPage',user_path(current_user.id),class: 'nav-link text-white h4' %></li>
+              <li><%= link_to ' Timer',home_timer_path, data: { 'turbolinks': false },class: 'nav-link text-white h4'%></li>
+              <li><%= link_to ' logout', destroy_user_session_path, method: :delete,class: 'nav-link text-white h4' %></li>
             <% else %>
-              <li><%= link_to ' Home',root_path,class: 'fas fa-home nav-link text-info h2' %></li>
-              <li><%= link_to ' About',home_about_path,class: 'fas fa-link nav-link text-info h2' %></li>
-              <li><%= link_to ' sign up', new_user_registration_path,class: 'fas fa-user-plus nav-link text-info h2' %></li>
-              <li><%= link_to ' login', new_user_session_path ,class: 'fas fa-sign-in-alt nav-link text-info h2'%></li>
+              <li><%= link_to ' Home',root_path,class: 'nav-link text-white h4' %></li>
+              <li><%= link_to ' About',home_about_path,class: 'nav-link text-white h4' %></li>
+              <li><%= link_to ' sign up', new_user_registration_path,class: 'nav-link text-white h4' %></li>
+              <li><%= link_to ' login', new_user_session_path ,class: 'nav-link text-white h4'%></li>
             <% end %>
           </ul>
         </div>
-
-        <div id="hm-icon">
-          <a class="menu-trigger" >
-            <span></span>
-            <span></span>
-            <span></span>
-          </a>
-        </div>
-    </div>
+      </div>
+    </nav>
     <div class="header" id="theTarget">
       <div class="image1"></div>
       <div class="image2"></div>
