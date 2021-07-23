@@ -59,14 +59,12 @@ button:focus {
   outline: none;
 }
 
-.top-page-footer{
-  height: 20vh;
-  position: relative;
-  bottom: 0;
-  background-image:image-url("C5D97356-4043-455A-9F41-EAF1E14B0A3B_1_105_c.jpeg");
-  background-repeat: no-repeat;
-  background-position: center center ;
+.logo{
+  background-image: image-url("D86020E8-4217-4474-953C-75DA8D886567_4_5005_c.jpeg");
   background-size: cover;
+  background: contain;
+  height: 40px;
+  width: 200px;
 }
 
 // メインページへの背景画像
@@ -110,6 +108,43 @@ button:focus {
   width: 300px;
   height: 300px;
   object-fit: cover;
+}
+
+// 画面編移じのアニメーション
+#page-animate::before {
+ content: '';
+ position: fixed;
+ top: 0;
+ width: 100%;
+ height: 100%;
+ background-color: #333;
+ z-index: 9999;
+ pointer-events: none;
+ right: 100%;
+ -webkit-transition: right 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+ transition: right 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#page-animate::after {
+ content: '';
+ position: fixed;
+ top: 0;
+ width: 100%;
+ height: 100%;
+ background-color: #333;
+ z-index: 9999;
+ pointer-events: none;
+ left: 100%;
+ -webkit-transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+ transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#page-animate.is-slide-in::before {
+ right: 0;
+}
+
+#page-animate.is-slide::after {
+ left: 0;
 }
 
 // スマホサイズ時メニューバー表示
