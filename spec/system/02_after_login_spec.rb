@@ -18,16 +18,16 @@ describe 'ユーザログイン後のテスト' do
       subject { current_path }
 
       it 'Homeを押すと、会員ページ画面に遷移する' do
-        click_on "ホーム"
-        is_expected.to eq "home/home"
+        click_on "Home"
+        is_expected.to eq "/home/home"
       end
       it "MyPageを押すと、会員詳細ページに遷移する" do
         click_on "MyPage"
         is_expected.to eq "/users/" + user.id.to_s
       end
       it 'Timerを押すと、タイマー画面に遷移する' do
-        click_on "Timer"
-        is_expected.to eq "home/timer"
+        click_on "Timer!"
+        is_expected.to eq "/home/timer"
       end
     end
   end
@@ -39,7 +39,7 @@ describe 'ユーザログイン後のテスト' do
 
     context '表示内容の確認' do
       it 'URLが正しい' do
-        expect(current_path).to eq 'home/home'
+      expect(current_path).to eq '/home/home'
       end
       it 'My Detaリンクが存在するか' do
         expect(page).to have_link , href: home_date_path
@@ -51,7 +51,7 @@ describe 'ユーザログイン後のテスト' do
         expect(page).to have_link , href: users_path
       end
       it 'My Pageリンクが存在するか' do
-        expect(page).to have_link , href: user_path
+        expect(page).to have_link , href: user_path(user)
       end
     end
   end
@@ -75,10 +75,10 @@ describe 'ユーザログイン後のテスト' do
         expect(page).to have_content other_user.name
       end
       it "他人のフォロー数が表示される" do
-        expect(page).to have_content other_user.following_users.size
+        expect(page).to have_content other_user.followings.size
       end
       it "他人のフォロワー数が表示される" do
-        expect(page).to have_content other_user.follower_users.size
+        expect(page).to have_content other_user.followers.size
       end
     end
   end

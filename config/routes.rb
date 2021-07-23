@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # 新規登録後の偏移先を変えるためにcontrollerを作成し、controllers: { registrations: 'registrations' }を追記
+  devise_for :users, controllers: { registrations: 'registrations' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'homes#top'

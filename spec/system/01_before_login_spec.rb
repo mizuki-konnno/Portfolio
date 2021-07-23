@@ -11,16 +11,23 @@ describe 'ユーザログイン前のテスト' do
         expect(current_path).to eq '/'
       end
       it '指定の値のリンクが存在するか ログイン' do
-        expect(page).to have_link "会員の方はこちらからログインして下さい"
-      end
-      it 'Log inリンクの内容が正しい' do
-        expect(page).to have_link log_in_link, href: new_user_session_path
+        expect(page).to have_link "会員の方はこちらからログインしてください"
       end
       it '指定の値のリンクが存在するか Sign Up' do
-        expect(page).to have_link "新機会員登録はこちらから"
+        expect(page).to have_link "新規会員登録はこちらから"
       end
-      it 'Sign Upリンクの内容が正しい' do
-        expect(page).to have_link sign_up_link, href: new_user_registration_path
+    end
+
+    context 'リンクの内容を確認' do
+      subject { current_path }
+
+      it 'ログインボタンを押すと、ログイン画面に偏移する' do
+        click_on '会員の方はこちらからログインしてください'
+        is_expected.to eq new_user_session_path
+      end
+      it '新規会員登録ボタンを押すと、会員登録画面に遷移する' do
+        click_on '新規会員登録はこちらから'
+        is_expected.to eq new_user_registration_path
       end
     end
   end
@@ -110,7 +117,6 @@ describe 'ユーザログイン前のテスト' do
 
     context '新規登録成功のテスト' do
       before do
-        fill_in 'user[name]', with: Faker::Lorem.characters(number: 10)
         fill_in 'user[email]', with: Faker::Internet.email
         fill_in 'user[password]', with: 'password'
         fill_in 'user[password_confirmation]', with: 'password'
@@ -121,7 +127,7 @@ describe 'ユーザログイン前のテスト' do
       end
       it '新規登録後のリダイレクト先が、about画面になっている' do
         click_button 'Sign up'
-        is_expected.to eq '/home/about'
+        expect(current_path).to eq '/home/about'
       end
     end
   end
@@ -158,8 +164,8 @@ describe 'ユーザログイン前のテスト' do
         click_button 'Log in'
       end
 
-      it 'ログイン後のリダイレクト先が、ログインしたユーザの詳細画面になっている' do
-        is_expected.to eq '/home/home'
+      it 'ログイン後のリダイレクト先が、会員homeページになっている。' do
+        expect(current_path).to eq '/home/home'
       end
     end
 
@@ -181,26 +187,23 @@ describe 'ユーザログイン前のテスト' do
 
     before do
       visit new_user_session_path
-      fill_in 'user[name]', with: user.name
+      fill_in 'user[email]', with: user.email
       fill_in 'user[password]', with: user.password
       click_button 'Log in'
     end
 
     context 'ヘッダーの表示を確認' do
-      it 'タイトルが表示される' do
-        expect(page).to have_content 'Bookers'
-      end
       it 'Homeリンクが表示される' do
        expect(page).to have_link "Home"
       end
       it 'MyPageリンクが表示される' do
-        expect(page).to have_link "MyPage"
+       expect(page).to have_link "MyPage"
       end
       it 'Timerリンクが表示される' do
        expect(page).to have_link "Timer"
       end
       it 'log outリンクが表示される' do
-        expect(page).to have_link "log out"
+        expect(page).to have_link "logout"
       end
     end
   end
@@ -210,15 +213,15 @@ describe 'ユーザログイン前のテスト' do
 
     before do
       visit new_user_session_path
-      fill_in 'user[name]', with: user.name
+      fill_in 'user[email]', with: user.email
       fill_in 'user[password]', with: user.password
       click_button 'Log in'
-      click_link logout_link
+      click_link "logout"
     end
 
     context 'ログアウト機能のテスト' do
-      it '正しくログアウトできている: ログアウト後のリダイレクト先においてAbout画面へのリンクが存在する' do
-        expect(page).to have_link '', href: '/home/about'
+      it '正しくログアウトできている: ログアウト後のリダイレクト先においてログアウトリンクが存在しない' do
+        expect(page).not_to have_link nil, href: destroy_user_session_path
       end
       it 'ログアウト後のリダイレクト先が、トップになっている' do
         expect(current_path).to eq '/'
