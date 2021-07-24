@@ -5,7 +5,7 @@
       <%= date.strftime("%d") %>
       <% training.each do |training| %>
       <div>
-        <%= link_to training.start_time.strftime("○"), training_path(training) %>
+        <%= link_to training.start_time.strftime("★"), training_path(training) %>
       </div>
       <% end %>
       <% end %>

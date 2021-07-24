@@ -2,7 +2,7 @@
   <%= form_with model: @training_content, url: training_training_contents_path(@training), remote:true do |f| %>
   <%= f.hidden_field :training_id, value: @training.id %>
   <table class="table text-center">
-    <tr><th>menu</th><th>weight</th><th>回数</th><th>set数</th></tr>
+    <tr><th>menu</th><th>weight</br>(kg)</th><th>回数</th><th>set数</th></tr>
     <tr>
       <th>
         <%= f.collection_select :menu_id, @menu, :id, :training_menu  %>

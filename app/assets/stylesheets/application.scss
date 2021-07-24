@@ -74,6 +74,14 @@ button:focus {
   background-blend-mode:lighten;
 }
 
+.full-page {
+ background-color: #000000;
+}
+
+.header-color {
+  background-color: #000000;
+}
+
 // カレンダーの日にちの色を変える
 .simple-calendar {
  .day {}
@@ -125,19 +133,7 @@ button:focus {
  transition: right 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#page-animate::after {
- content: '';
- position: fixed;
- top: 0;
- width: 100%;
- height: 100%;
- background-color: #333;
- z-index: 9999;
- pointer-events: none;
- left: 100%;
- -webkit-transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
- transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 
 #page-animate.is-slide-in::before {
  right: 0;

@@ -4,8 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, length: {maximum: 20, minimum: 2}, on: :update
-  validates :introduction, length: {maximum: 50}, on: :update
+  validates :name, length: {maximum: 20, minimum: 2}
 
   # フォロー・フォロワー機能のリレーション
   # 自分がフォローされる側の関係性
