@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get "/home/home/", to: "homes#home"
 
   resources :menus, only: [:new, :create, :destroy]
-  resources :user_dates
 
   resources :trainings, only: [:new, :index, :create, :show] do
     resources :training_contents, only: [:new, :create, :destroy]

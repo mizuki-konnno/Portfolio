@@ -1,11 +1,19 @@
 <!--user詳細画面-->
-<div class="container">
+<div class="container background py-3">
 
   <!--ログインしているユーザと詳細なので受け取ったidが等しいかで条件分岐-->
   <% if user_signed_in? && current_user.id.to_s == params[:id] %>
   <div class="row my-5 slide-bottom show">
     <div class="col-md-12 my-3 text-center">
       <h2><i class="fas fa-paw"></i> <%= current_user.name %> is My Page</h2>
+    </div>
+    <div class="col-md-12 my-3 text-center">
+      <span id="followings_count_<%= @user.id %>">
+        フォロー数 <%= link_to @user.followings.count,user_follwings_path(@user) %>
+      </span> |
+      <span id="followers_count_<%= @user.id %>">
+        フォロワー数 <%= link_to @user.followers.count,user_follwers_path(@user) %>
+      </span>
     </div>
     <div class="col-md-12 mt-5 text-center">
      <strong>マイページ</strong> <%= link_to "情報入力", edit_user_path(@user), class:"btn-outline-secondary  btn-sm mypage_edit" %>
@@ -15,7 +23,15 @@
   <div class="row my-5 slide-bottom show">
     <div class="col-md-12 my-3 text-center">
       <h2><i class="fas fa-paw"></i> <%= @user.name %> is My Page</h2>
-      <p class="mt-3" id="follow_button_<%= @user.id %>"><%= render 'relationships/follow_button',user: @user %></p>
+      <p class="mt-5" id="follow_button_<%= @user.id %>"><%= render 'relationships/follow_button',user: @user %></p>
+    </div>
+    <div class="col-md-12 my-3 text-center">
+      <span id="followings_count_<%= @user.id %>">
+        フォロー数 <%= link_to @user.followings.count,user_follwings_path(@user) %>
+      </span> |
+      <span id="followers_count_<%= @user.id %>">
+        フォロワー数 <%= link_to @user.followers.count,user_follwers_path(@user) %>
+      </span>
     </div>
     <div class="col-md-12 mt-3 text-center">
       <%= link_to "Other Usersへ戻る", users_path, class:"btn btn-link  btn-sm mypage_edit" %>
