@@ -3,8 +3,6 @@
     <div class="col-8 col-md-8 mx-auto">
       <h2 class="text-center my-5"><i class="fas fa-dumbbell"></i> My Training</h2>
     </div>
-    <!--ログインしているユーザと詳細なので受け取ったidで条件分岐-->
-    <% if user_signed_in? && current_user.id.to_s == params[:id] %>
     <div class="col-8 col-md-8 mx-auto">
       <h5 class="text-center my-5"><%= link_to "トレーニングメニューの登録", new_menu_path, class:"btn btn-link  btn-sm mypage_edit" %></h2>
     </div>
@@ -13,22 +11,14 @@
         <% @menus.each do |menu| %>
         <tr>
           <td><%= menu.training_menu %></td>
+          <td>MAX <%= menu.training_contents.maximum(:weight) %> Kg</td>
           <td>
-            <%= link_to "削除",menu_path(menu.id), class:"btn btn-outline-danger  btn-sm ", method: :delete %>
+            <% if menu.user.id == current_user.id %>
+            <%= link_to "削除",menu_path(menu.id), class:"btn btn-outline-danger  btn-sm ", method: :delete, remote: true %>
+            <% end %>
           </td>
         </tr>
         <% end %>
       </table>
     </div>
-    <% else %>
-      <div class="col">
-      <table class="table text-center">
-        <% @menus.each do |menu| %>
-        <tr>
-          <td><%= menu.training_menu %></td>
-        </tr>
-        <% end %>
-      </table>
-    </div>
-    <% end %>
   </div>
