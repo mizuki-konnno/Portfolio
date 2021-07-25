@@ -28,5 +28,16 @@
       <%= line_chart @user_traings.group("date(start_time)").average(:body_fat), suffix: "%", curve: false %>
     </div>
   </div>
+  <div class="row " >
+    <div class="col-12 col-md-10 text-center my-5 mx-auto">
+      <h3>トレーニングメニュー別のDate</h>
+    </div>
+    <% @menus.each do |menu| %>
+    <div class="col-12 col-md-10 mx-auto my-5 slide-bottom show ">
+      <%= menu.training_menu %>
+      <%= line_chart menu.training_contents.group("date(created_at)").maximum(:weight), curve: false %>
+    </div>
+    <% end %>
+  </div>
 </div>
 
