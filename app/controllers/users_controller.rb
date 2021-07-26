@@ -8,9 +8,18 @@ class UsersController < ApplicationController
     # パラメータとして名前か性別を受け取っている場合は絞って検索する
     if params[:name].present?
       @users = @users.get_by_name params[:name]
+      # 検索内容の表示
+      @search = params[:name]
     end
     if params[:gender].present?
       @users = @users.get_by_gender params[:gender]
+      # 検索内容の表示
+      @search = params[:gender]
+        if @search == 0.to_s
+          @search_gender = "男性"
+        else
+          @search_gender = "女性"
+        end
     end
   end
 
