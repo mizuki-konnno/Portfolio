@@ -117,15 +117,16 @@ describe 'ユーザログイン前のテスト' do
 
     context '新規登録成功のテスト' do
       before do
+        fill_in 'user[name]', with: Faker::Lorem.characters(number: 10)
         fill_in 'user[email]', with: Faker::Internet.email
         fill_in 'user[password]', with: 'password'
         fill_in 'user[password_confirmation]', with: 'password'
       end
 
-      it '正しく新規登録される' do
+       it '正しく新規登録される' do
         expect { click_button 'Sign up' }.to change(User.all, :count).by(1)
       end
-      it '新規登録後のリダイレクト先が、about画面になっている' do
+      it '新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている' do
         click_button 'Sign up'
         expect(current_path).to eq '/home/about'
       end

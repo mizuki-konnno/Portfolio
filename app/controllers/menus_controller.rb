@@ -21,7 +21,6 @@ class MenusController < ApplicationController
 
     @menu = Menu.find(params[:id])
     @menu.destroy
-    flash[:danger] = 'トレーニングメニューを削除しました。'
     # 非同期通信のため削除
     # redirect_to user_path(current_user)
   end
