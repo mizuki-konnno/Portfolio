@@ -48,8 +48,39 @@
 - JS ライブラリ：jQuery
 - IDE：Cloud9
 
+## 本番環境
+
+- AWS(EC2,RDS)
+- Nginx,Pima
+- Github actionを用いた自動デプロイ
+
+## 使用技術
+
+- Ruby 2.6.3
+- Ruby on Rails 5.2.5
+- MySQL 5.7.22
+- Nginx
+- Puma
+- AWS
+- RSpec
+
+## 機能一覧
+
+- 会員認証（devise）
+- 投稿機能(Ajax)
+- フォロー機能(Ajax)
+- 検索機能
+- ページング機能(kaminari)
+- レスポンシブ対応（スマートフォン)
+- カレンダー機能（simple_calendar）
+- グラフの導入（chartkick）
+- RSpecによるテスト（model）
+
+## 静的コード解析ツール
+- Rudocop
+
 ## 使用素材
 
 - 写真素材（フリー）
-- O-DAN
-- url;https://o-dan.net/ja/
+ O-DAN　さん
+ url;https://o-dan.net/ja/
