@@ -6,7 +6,7 @@
   </div>
   <div class="my-3 pb-5 text-center h1 text-light slide-bottom show"><h1><i class="fas fa-search-minus"></i> Menu</h1></div>
     <div class="row d-flex justify-content-around">
-      <div class="col-10 col-md-5 menu mb-5">
+      <div class="col-12 col-md-5 menu mb-5">
         <%= link_to home_date_path do %>
         <div class="homemenu1"></div>
          <div class="mask">
@@ -14,7 +14,7 @@
 	       </div>
 	      <% end %>
       </div>
-      <div class="col-10 col-md-5 menu mb-5">
+      <div class="col-12 col-md-5 menu mb-5">
         <%= link_to home_timer_path, data: { 'turbolinks': false } do %>
         <div class="homemenu2"></div>
           <div class="mask">
@@ -25,7 +25,7 @@
     </div>
 
     <div class="row  d-flex justify-content-around ">
-      <div class="col-10 col-md-5  menu mb-5">
+      <div class="col-12 col-md-5  menu mb-5">
         <%= link_to users_path do %>
         <div class="homemenu3"></div>
           <div class="mask">
@@ -33,7 +33,7 @@
 	        </div>
 	      <% end %>
       </div>
-    <div class="col-10 col-md-5  menu mb-5">
+    <div class="col-12 col-md-5  menu mb-5">
       <%= link_to user_path(current_user.id) do %>
       <div class="homemenu4"></div>
         <div class="mask">
