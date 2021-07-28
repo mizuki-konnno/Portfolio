@@ -257,7 +257,7 @@ describe 'ユーザログイン後のテスト' do
       end
     end
   end
-  
+
    describe "トレーニング内容画面のテスト" do
     context "トレーニング内容画面" do
       before do
@@ -296,20 +296,20 @@ describe 'ユーザログイン後のテスト' do
       end
     end
 
-    xcontext "トレーニング内容入力のテスト" do
-      before do
-        visit training_path(training)
-        find("option[value='1']").select_option
-        fill_in "training_content[weight]", with: Faker::Lorem.characters(number: 1)
-        fill_in "training_content[rep]", with: Faker::Lorem.characters(number: 1)
-        fill_in "training_content[set]", with: Faker::Lorem.characters(number: 1)
-        click_on "登録"
-      end
+    # context "トレーニング内容入力のテスト" do
+      # before do
+        # visit training_path(training)
+        # find("option[value='1']").select_option
+        # fill_in "training_content[weight]", with: Faker::Lorem.characters(number: 1)
+        # fill_in "training_content[rep]", with: Faker::Lorem.characters(number: 1)
+        # fill_in "training_content[set]", with: Faker::Lorem.characters(number: 1)
+        # click_on "登録"
+      # end
 
-      it "入力後にトレーニング内容画面に遷移する" do
-        expect(current_path).to eq "/trainings/"  + Training.last.id.to_s
-      end
-    end
+      # it "入力後にトレーニング内容画面に遷移する" do
+        # expect(current_path).to eq "/trainings/"  + Training.last.id.to_s
+      # end
+    # end
   end
 
   describe "検索のテスト" do

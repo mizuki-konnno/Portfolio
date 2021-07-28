@@ -74,7 +74,7 @@
 - レスポンシブ対応（スマートフォン)
 - カレンダー機能（simple_calendar）
 - グラフの導入（chartkick）
-- RSpecによるテスト（model）
+- RSpecによるテスト（model,requests,system)
 
 ## 静的コード解析ツール
 - Rudocop
@@ -82,5 +82,5 @@
 ## 使用素材
 
 - 写真素材（フリー）
- O-DAN　さん
+ O-DANさん
  url;https://o-dan.net/ja/
