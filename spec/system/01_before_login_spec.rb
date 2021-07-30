@@ -123,7 +123,7 @@ describe 'ユーザログイン前のテスト' do
         fill_in 'user[password_confirmation]', with: 'password'
       end
 
-       it '正しく新規登録される' do
+      it '正しく新規登録される' do
         expect { click_button 'Sign up' }.to change(User.all, :count).by(1)
       end
       it '新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている' do
@@ -195,13 +195,13 @@ describe 'ユーザログイン前のテスト' do
 
     context 'ヘッダーの表示を確認' do
       it 'Homeリンクが表示される' do
-       expect(page).to have_link "Home"
+        expect(page).to have_link "Home"
       end
       it 'MyPageリンクが表示される' do
-       expect(page).to have_link "MyPage"
+        expect(page).to have_link "MyPage"
       end
       it 'Timerリンクが表示される' do
-       expect(page).to have_link "Timer"
+        expect(page).to have_link "Timer"
       end
       it 'log outリンクが表示される' do
         expect(page).to have_link "logout"

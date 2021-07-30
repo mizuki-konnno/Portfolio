@@ -1,4 +1,3 @@
-
 require "rails_helper"
 
 describe "Registrations", type: :request do

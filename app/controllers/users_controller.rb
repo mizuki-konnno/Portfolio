@@ -15,11 +15,11 @@ class UsersController < ApplicationController
       @users = @users.get_by_gender params[:gender]
       # 検索内容の表示
       @search = params[:gender]
-        if @search == 0.to_s
-          @search_gender = "男性"
-        else
-          @search_gender = "女性"
-        end
+      if @search == 0.to_s
+        @search_gender = "男性"
+      else
+        @search_gender = "女性"
+      end
     end
   end
 

@@ -21,8 +21,8 @@ class TrainingContentsController < ApplicationController
 
     @training_menu_content = TrainingContent.find(params[:id])
     @training_menu_content.destroy
-      # 非同期通信のためコメントアウト
-      # redirect_to request.referer
+    # 非同期通信のためコメントアウト
+    # redirect_to request.referer
   end
 
   private
