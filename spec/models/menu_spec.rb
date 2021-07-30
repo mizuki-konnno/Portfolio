@@ -17,7 +17,6 @@ RSpec.describe 'menuモデルのテスト', type: :model do
     end
   end
 
-
   describe 'アソシエーションのテスト' do
     context 'userモデルとの関係' do
       it 'N:1となっている' do

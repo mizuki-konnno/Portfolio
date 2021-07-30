@@ -24,6 +24,7 @@ describe " ユーザログイン後のリクエストテスト", type: :request 
         expect(response).to have_http_status(200)
       end
     end
+
     context "GET /home/date" do
       it "データページの表示が取得できること" do
         sign_in user
@@ -31,6 +32,7 @@ describe " ユーザログイン後のリクエストテスト", type: :request 
         expect(response).to have_http_status(200)
       end
     end
+
     context "GET /home/timer" do
       it "タイマーページの表示が取得できること" do
         sign_in user
@@ -38,6 +40,7 @@ describe " ユーザログイン後のリクエストテスト", type: :request 
         expect(response).to have_http_status(200)
       end
     end
+
     context "GET /home/about" do
       it "アバウトページの表示が取得できること" do
         sign_in user
@@ -52,6 +55,7 @@ describe " ユーザログイン後のリクエストテスト", type: :request 
       sign_in user
       @menu = create(:menu)
     end
+
     context "GET /menus/new" do
       it "メニューの登録の表示が取得できること" do
         get new_menu_path(@menu)
@@ -65,12 +69,14 @@ describe " ユーザログイン後のリクエストテスト", type: :request 
       sign_in user
       @trainig = create(:training)
     end
+
     context "GET /trainings/new" do
       it "トレーニング開始の画面の表示が取得できること" do
         get new_training_path(@trainig)
         expect(response).to have_http_status(200)
       end
     end
+
     context "GET /trainigs/:id" do
       it "トレーニング内容の表示" do
         get training_path(training)
@@ -90,24 +96,28 @@ describe " ユーザログイン後のリクエストテスト", type: :request 
         expect(response).to have_http_status(200)
       end
     end
+
     context "GET /users/:id" do
       it "ユーザープロフィールの表示" do
         get users_path(user)
         expect(response).to have_http_status(200)
       end
     end
+
     context "GET /users/:id/edit" do
       it "ユーザー編集画面の表示" do
         get edit_user_path(user)
         expect(response).to have_http_status(200)
       end
     end
+
     context "GET /users/:user_id/followings" do
       it "ユーザーのフォロー中一覧表示" do
         get user_follwings_path(user)
         expect(response).to have_http_status(200)
       end
     end
+
     context " /users/:user_id/followers" do
       it "ユーザーのフォロー 一覧表示" do
         get user_follwers_path(user)

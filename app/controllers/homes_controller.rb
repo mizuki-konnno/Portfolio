@@ -18,5 +18,4 @@ class HomesController < ApplicationController
   def home
     @trainings = current_user.trainings
   end
-
 end

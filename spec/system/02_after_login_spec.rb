@@ -43,19 +43,19 @@ describe 'ユーザログイン後のテスト' do
 
     context '表示内容の確認' do
       it 'URLが正しい' do
-      expect(current_path).to eq '/home/home'
+        expect(current_path).to eq '/home/home'
       end
       it 'My Detaリンクが存在するか' do
-        expect(page).to have_link , href: home_date_path
+        expect(page).to have_link, href: home_date_path
       end
       it 'Timerリンクが存在するか' do
-        expect(page).to have_link , href: home_timer_path
+        expect(page).to have_link, href: home_timer_path
       end
       it 'Other Usersリンクが存在するか' do
-        expect(page).to have_link , href: users_path
+        expect(page).to have_link, href: users_path
       end
       it 'My Pageリンクが存在するか' do
-        expect(page).to have_link , href: user_path(user)
+        expect(page).to have_link, href: user_path(user)
       end
       it 'トレーニング開始のリンクが存在するか' do
         expect(page).to have_link "トレーニング開始"
@@ -63,7 +63,7 @@ describe 'ユーザログイン後のテスト' do
     end
   end
 
-   describe "Other Users画面のテスト" do
+  describe "Other Users画面のテスト" do
     before do
       visit users_path
     end
@@ -93,7 +93,7 @@ describe 'ユーザログイン後のテスト' do
     end
   end
 
- describe "会員詳細画面のテスト" do
+  describe "会員詳細画面のテスト" do
     before do
       visit user_path(other_user)
     end
@@ -118,7 +118,7 @@ describe 'ユーザログイン後のテスト' do
         expect(page).to have_content other_user.followers.size
       end
       it "フォローリンクが存在するか" do
-        expect(page).to have_link "フォローする" or "フォローを外す"
+        expect(page).to(have_link("フォローする")) || "フォローを外す"
       end
       it "他人の身長が表示される" do
         expect(page).to have_content other_user.height
@@ -141,7 +141,7 @@ describe 'ユーザログイン後のテスト' do
     end
   end
 
-   describe "マイページのテスト" do
+  describe "マイページのテスト" do
     before do
       visit user_path(user)
     end
@@ -177,8 +177,8 @@ describe 'ユーザログイン後のテスト' do
       it "トレーニングメニューの登録のリンクが存在するか" do
         expect(page).to have_link "トレーニングメニューの登録"
       end
-     end
     end
+  end
 
   describe "トレーニング開始画面のテスト" do
     context "トレーニング開始画面" do
@@ -216,12 +216,12 @@ describe 'ユーザログイン後のテスト' do
         expect(page).to have_content "トレーニングを開始しました。"
       end
       it "作成後にトレーニング内容画面に遷移する" do
-        expect(current_path).to eq "/trainings/"  + Training.last.id.to_s
+        expect(current_path).to eq "/trainings/" + Training.last.id.to_s
       end
     end
   end
 
-    describe "トレーニングメニュー登録画面のテスト" do
+  describe "トレーニングメニュー登録画面のテスト" do
     context "トレーニングメニュー登録画面" do
       before do
         visit user_path(user)
@@ -253,12 +253,12 @@ describe 'ユーザログイン後のテスト' do
         expect(page).to have_content "トレーニングメニューの登録に成功しました。"
       end
       it "作成後にトレーニング内容画面に遷移する" do
-        expect(current_path).to eq "/users/"  + user.id.to_s
+        expect(current_path).to eq "/users/" + user.id.to_s
       end
     end
   end
 
-   describe "トレーニング内容画面のテスト" do
+  describe "トレーニング内容画面のテスト" do
     context "トレーニング内容画面" do
       before do
         visit training_path(training)
@@ -297,18 +297,18 @@ describe 'ユーザログイン後のテスト' do
     end
 
     # context "トレーニング内容入力のテスト" do
-      # before do
-        # visit training_path(training)
-        # find("option[value='1']").select_option
-        # fill_in "training_content[weight]", with: Faker::Lorem.characters(number: 1)
-        # fill_in "training_content[rep]", with: Faker::Lorem.characters(number: 1)
-        # fill_in "training_content[set]", with: Faker::Lorem.characters(number: 1)
-        # click_on "登録"
-      # end
+    # before do
+    # visit training_path(training)
+    # find("option[value='1']").select_option
+    # fill_in "training_content[weight]", with: Faker::Lorem.characters(number: 1)
+    # fill_in "training_content[rep]", with: Faker::Lorem.characters(number: 1)
+    # fill_in "training_content[set]", with: Faker::Lorem.characters(number: 1)
+    # click_on "登録"
+    # end
 
-      # it "入力後にトレーニング内容画面に遷移する" do
-        # expect(current_path).to eq "/trainings/"  + Training.last.id.to_s
-      # end
+    # it "入力後にトレーニング内容画面に遷移する" do
+    # expect(current_path).to eq "/trainings/"  + Training.last.id.to_s
+    # end
     # end
   end
 
@@ -350,7 +350,7 @@ describe 'ユーザログイン後のテスト' do
       it "検索したワードが表示される" do
         expect(page).to have_content "「男性」の検索結果"
       end
-     it "会員の画像のリンク先が正しい" do
+      it "会員の画像のリンク先が正しい" do
         expect(page).to have_link "", href: user_path(other_user)
       end
       it "会員の名前が表示される" do
